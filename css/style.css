@@ -1,8 +1,38 @@
 
 body{
-   background-image: url('../img/weather.jpg');
+   background-image: url('../img/bg-image.jpg');
    background-repeat: no-repeat;
    background-size: cover;
    height: 100vh;
    
+}
+
+
+.spinner{
+   text-align: center;
+   display: none;   
+}
+.spinner img{
+   width:60px;
+   height:60px;
+
+}
+/*======= loading spinner ========*/
+
+#main{
+   text-align: center;
+   display:none;
+   
+}
+#loading{
+ position:absolute;
+}
+#loadingDot{
+   position: relative;
+   right: -113px;
+   top: -72px;
+}
+#loadingDot #dot{
+      color: rgb(13, 207, 228);
+      font-size: 50px;     
 }
