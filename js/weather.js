@@ -9,9 +9,9 @@ cityName.addEventListener("keypress", function (event) {
   }
 });
 
-// const toggolerSpinner = (displayStyle) => {
-//   document.getElementById("spinner").style.display = displayStyle;
-// };
+const toggolerSpinner = (displayStyle) => {
+  document.getElementById("spinner").style.display = displayStyle;
+};
 
 let api_key = "1beee1988cc129f68ea910a5ef418d22";
 document.getElementById("search-button").addEventListener("click", function () {
@@ -26,18 +26,8 @@ document.getElementById("search-button").addEventListener("click", function () {
       .then((res) => res.json())
       .then((data) => displayWeather(data));
   }
-  // toggolerSpinner('block')
-  function loadingSpinner() {
-    const loading = document.getElementById("main");
-    loading.style.display = "block";
-    const lDot = document.getElementById("dot");
-    if (lDot.innerHTML.length > 4) {
-      lDot.innerHTML = "";
-    } else {
-      lDot.innerHTML += ".";
-    }
-  }
-  window.setInterval(loadingSpinner, 1000);
+  toggolerSpinner('block')
+  
 });
 
 const setInnerText = (id, text) => {
@@ -56,6 +46,6 @@ const displayWeather = (weather) => {
   const url = `http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`;
   const imgIcon = document.getElementById("weather-icon");
   imgIcon.setAttribute("src", url);
-  // toggolerSpinner("none");
+  toggolerSpinner("none");
 
 };
